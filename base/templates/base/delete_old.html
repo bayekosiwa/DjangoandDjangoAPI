@@ -1,0 +1,10 @@
+<form method="POST" action="">
+  <!-- be sure to give the space before and after the comparison operator -->
+  {% csrf_token %} {% if obj != None %}
+  <p>Are you sure you want to delete ({{obj}})?</p>
+  {% else %}
+  <p>Do you really want to logout?</p>
+  {% endif %}
+  <a href="{{request.META.HTTP_REFERER}}">No</a>
+  <input type="submit" value="YES" />
+</form>

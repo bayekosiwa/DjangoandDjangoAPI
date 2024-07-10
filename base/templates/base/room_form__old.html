@@ -1,0 +1,11 @@
+{% extends 'main.html' %} {% block content %}
+
+<div>
+  <!-- leave action="" for method="POST" and for print(request.POST) and instead use redirect in views -->
+  <!-- action="some url" OK to use with method="GET" -->
+  <form method="POST" action="">
+    {% csrf_token %} {{form.as_p}}
+    <input type="submit" value="SUBMIT" />
+  </form>
+</div>
+{% endblock content %}

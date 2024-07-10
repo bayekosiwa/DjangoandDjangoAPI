@@ -1,0 +1,14 @@
+{% load static %}
+<h3>Activity</h3>
+<hr />
+{% for i in comments %}
+<div>
+  <!-- <img src="{% static 'images/avatar.svg' %}" /> -->
+  <p>
+    @<a href="{% url 'profile' i.user.id %}">{{i.user}}</a>
+    _______{{i.created|timesince}} ago
+  </p>
+  <p>commented on the "{{i.room}}"</p>
+  <h4>{{i}}</h4>
+</div>
+{% endfor %}

@@ -1,0 +1,9 @@
+{% for i in rooms %}
+<h2>
+  <!-- {{temp|add:'1'}} <small>({{i.topic}})</small> doesn't work as intended -->
+  {{i.id}} <small>({{i.topic}})</small>
+  <a href="{% url 'room' i.id %}">{{i.name}}</a>
+  <!-- <h2>{{i.id}} + <a href="/room/{{i.id}}">{{i.name}}</a></h2> -->
+</h2>
+<hr />
+{% endfor %}
